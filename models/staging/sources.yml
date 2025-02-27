@@ -1,0 +1,13 @@
+version: 2
+sources:
+  - name: superstore
+    database: SUPERSTORE_DB
+    schema: RAW_DATA
+    tables:
+      - name: superstore_orders
+        description: Raw Superstore sales data
+        columns:
+          - name: order_id
+            tests:
+              - unique
+              - not_null
