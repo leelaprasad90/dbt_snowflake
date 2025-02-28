@@ -40,5 +40,13 @@ models:
     # Applies to all files under models/example/
     staging:
       materialized: view
+    intermediate:
+      materialized: view  
     marts:
       materialized: table
+      +persist_docs:
+        relation: true #Stores at table/view level
+        columns: true  #Stores at column level
+    custom_schemas:
+      materialized: table
+      +schema: "{{ generate_custom_schema() }}"    

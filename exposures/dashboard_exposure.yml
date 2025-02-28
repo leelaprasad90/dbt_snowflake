@@ -1,0 +1,13 @@
+version: 2
+exposures:
+  - name: taxi_dashboard
+    type: dashboard
+    depends_on:
+      - ref('trip_metrics_by_zone')
+      - ref('payment_analysis')
+      - ref('weather_impact')
+      - ref('peak_hour_trends')
+    owner:
+      name: "Data Team"
+      email: "data@team.com"
+    description: "Dashboard for NYC Taxi analytics with weather and peak hour insights"

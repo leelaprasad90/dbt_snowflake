@@ -1,8 +1,17 @@
 version: 2
 sources:
-  - name: superstore
-    database: SUPERSTORE_DB
+  - name: taxi_raw
+    database: NYC_TAXI_DB
     schema: RAW_DATA
     tables:
-      - name: superstore_orders
-        description: Raw Superstore sales data
+      - name: yellow_trips
+        freshness: 
+          warn_after: {count: 7, period: day}
+        columns:
+          - name: tpep_pickup_datetime
+        tests:
+          - not_null
+      - name: taxi_zones
+      - name: weather
+            
+        
