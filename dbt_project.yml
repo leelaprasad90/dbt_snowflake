@@ -49,4 +49,4 @@ models:
         columns: true  #Stores at column level
     custom_schemas:
       materialized: table
-      +schema: "{{ generate_custom_schema() }}"    
+      +schema: "{{'generate_custom_schema()'}}"

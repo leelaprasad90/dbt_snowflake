@@ -14,3 +14,5 @@ SELECT
     congestion_surcharge
 FROM {{ source('taxi_raw', 'yellow_trips') }}
 WHERE trip_distance > 0 AND fare_amount >= 0
+AND tpep_pickup_datetime BETWEEN '1970-01-01' AND '9999-12-31'
+AND tpep_dropoff_datetime BETWEEN '1970-01-01' AND '9999-12-31'
